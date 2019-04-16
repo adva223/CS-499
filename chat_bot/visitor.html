@@ -1,0 +1,102 @@
+<!-- This page is a template of what the visitor to the site will see (does not include member in the room) -->
+
+<!DOCTYPE html>
+<html>
+<title>Live Chat</title>
+<head>
+  <script type='text/javascript' src='./js\bootstrap.bundle.js'></script>
+  <script type='text/javascript' src='./js\bootstrap.js'></script>
+  <link rel="stylesheet" href="./css\bootstrap.css">
+
+  <!-- THIS MAKES COLLAPSE WORK -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+  <link rel="icon" href="https://cirlegal.com/wp-content/themes/cooley-iuliano-robey/favicon/apple-icon-57x57.png" />
+  <!--<script type='text/javascript' src='http://0.0.0.0:8080/scaledrone.js'></script>-->
+  <meta charset="utf-8">
+  <!-- <meta name="viewport" content="width=device-width"> -->
+
+  <!-- Style for some basic elements -->
+  <style> 
+    body {
+      box-sizing: border-box;
+      margin-left: 10%;
+      margin-right: 10%;
+      margin-bottom: 5%;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      max-height: 90vh;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .members-count,
+    .members-list,
+    .messages {
+      border: 1px solid #e4e4e4;
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+
+    .messages {
+      flex-shrink: 1;
+      overflow: auto;
+    }
+
+    .message {
+      padding: 5px 0;
+    }
+    .message .member {
+      display: inline-block;
+    }
+
+    .member {
+      padding-right: 10px;
+      position: relative;
+    }
+
+    .message-form {
+      display: flex;
+      flex-shrink: 0;
+    }
+    .message-form__input {
+      flex-grow: 1;
+      border: 1px solid #dfdfdf;
+      padding: 10px 15px;
+      font-size: 16px;
+    }
+    .message-form__button {
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <img src="https://i.imgur.com/asz82Om.png" height="122" width="300">
+  <div class="members-count">-</div>
+  <div class="messages"></div>
+  <form class="message-form" onsubmit="return false;">
+    <input class="message-form__input" placeholder="Type a message.." type="text"/>
+    <input class="btn btn-outline-primary" value="Send" type="submit"/>
+  </form>
+  <script src="./script.js"></script>
+
+  <!-- FOR WHEN LIVE CHAT NOT AVAILABLE -->
+  <br>
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" onclick="AI_pimalpractice()" class="btn btn-secondary">Personal Injury / Malpractice</button>
+    <button type="button" onclick="AI_criminaldefense()" class="btn btn-secondary">Criminal Defense</button>
+    <button type="button" onclick="AI_familydivorce()" class="btn btn-secondary">Family / Divorce</button>
+    <button type="button" onclick="AI_other()" class="btn btn-secondary">Other</button>
+  </div>
+  <br>
+  <div class="alert alert-primary" role="alert" style="font-size: 10px;">
+  The information disclosed in this conversation does not constitute or create a lawyer-client relationship. You should not send sensitive or confidential information via this website, as this chat is not a secure environment, and it is possible that your message sent might be intercepted and read by third parties. Please allow one of our attorneys to call you directly to discuss the details of your case.
+  </div>
+
+</body>
+</html>
